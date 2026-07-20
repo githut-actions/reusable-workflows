@@ -20,12 +20,16 @@ jobs:
     steps:
       - name: checkout the code
         uses: actions/checkout@v5
+
       - name: check the files
         run: ls -l
-      - name: print the inputs
-        id: package-version
+
+      - name: print the inputs        
         run: echo "Project ${{ inputs.project }}"
+
       - name: get the App Version 
+        id: package-version
         run: echo "Version=$(jq -r '.version' package.json)" >> "$GITHUB_OUTPUT"
+        
       - name: Print the version 
         run: echo ${{ steps.package-version.outputs.version}}
