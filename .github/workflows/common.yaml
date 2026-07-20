@@ -1,0 +1,23 @@
+name: common CICD 
+on:
+  workflow_call:
+    inputs:
+      project:
+        required: true
+        type: string
+      component:
+        required: true
+        type: string
+      app_type:
+        required: true
+        type: string
+jobs:
+  ci: # job-name
+    runs-on: self-hosted
+    steps:
+      - name: checkout the code
+        uses: actions/checkout@v5
+      - name: check the files
+        run: ls -l
+      - name: print the inputs
+        run: echo "Project {{ inputs.project }}"
