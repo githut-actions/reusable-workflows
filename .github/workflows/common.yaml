@@ -36,3 +36,5 @@ jobs:
 
       - name: install dependies
         run: npm install
+      - name: Run test cases
+        run: npm test
