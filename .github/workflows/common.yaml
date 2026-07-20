@@ -23,6 +23,7 @@ jobs:
       - name: check the files
         run: ls -l
       - name: print the inputs
+        id: package-version
         run: echo "Project ${{ inputs.project }}"
       - name: get the App Version 
         run: echo "Version=$(jq -r '.version' package.json)" >> "$GITHUB_OUTPUT"
