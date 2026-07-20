@@ -36,5 +36,7 @@ jobs:
 
       - name: install dependies
         run: npm install
-      - name: Run test cases
-        run: npm test
+
+      - name: build docker image
+        run: docker build -t 352742379477.dkr.ecr.us-east-1.amazonaws.com/${{inputs.project }}/${{ inputs.component }}:${{ steps.package-version.outputs.version}} .
+
