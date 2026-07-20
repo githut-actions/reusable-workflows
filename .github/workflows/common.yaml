@@ -26,3 +26,5 @@ jobs:
         run: echo "Project ${{ inputs.project }}"
       - name: get the App Version 
         run: echo "Version=$(jq -r '.version' package.json)" >> "$GITHUB_OUTPUT"
+      - name: Print the version 
+        run: echo ${{ steps.package-version.outputs.version}}
