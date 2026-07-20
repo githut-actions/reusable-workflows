@@ -13,11 +13,11 @@ on:
         type: string
 jobs:
   ci: # job-name
-    runs-on: self-hosted
+    runs-on: self-hosted ##
     steps:
       - name: checkout the code
         uses: actions/checkout@v5
       - name: check the files
         run: ls -l
       - name: print the inputs
-        run: echo "Project {{ inputs.project }}"
+        run: echo "Project ${{ inputs.project }}"
